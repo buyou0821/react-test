@@ -1,8 +1,21 @@
 import React, { Component } from 'react'
+import TReact from './TReact'
 import logo from './logo.svg'
 import './App.css'
 
 class App extends Component {
+  componentDidMount() {
+    const TReactEle1 = {
+      $$typeof: 'TReact-element',
+      val: 1,
+    }
+    const TReactEle2 = {
+      $$typeof: 'TReact-element',
+      val: 2,
+    }
+    const result = TReact.Children.map([TReactEle1, TReactEle2], c => [c, c, c])
+    console.info('@result: ', result)
+  }
   render() {
     return (
       <div className="App">
