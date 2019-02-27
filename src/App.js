@@ -13,8 +13,15 @@ class App extends Component {
       $$typeof: 'TReact-element',
       val: 2,
     }
-    const result = TReact.Children.map([TReactEle1, TReactEle2], c => [c, c, c])
-    console.info('@result: ', result)
+    const result = TReact.Children.map([TReactEle1, TReactEle2], c => [
+      c,
+      [[c]],
+      c,
+    ])
+    // const result = TReact.Children.map(TReactEle1, c => c)
+    // const result = TReact.Children.map([TReactEle1, TReactEle2], c => c)
+    // const result = TReact.Children.map(TReactEle1, c => [c, [c]])
+    console.info('#', result)
   }
   render() {
     return (
